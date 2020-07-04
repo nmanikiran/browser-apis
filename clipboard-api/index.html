@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css"
+    />
+
+    <title>Clipboard API</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .main {
+        width: 60%;
+        min-width: 320px;
+      }
+      .to-copy {
+        width: 100%;
+        min-height: 150px;
+        border: 1px solid #d4d4d4;
+      }
+      button {
+        margin: 0.5rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="main">
+      <div
+        class="to-copy"
+        contenteditable
+        placeholder="Type something..."
+        aria-label="Type something"
+      ></div>
+      <button class="copy-btn">Copy to clipboard</button>
+
+      <p class="clipboard-results"></p>
+      <button class="paste-btn">Paste from clipboard</button>
+    </section>
+    <section class="no-support">
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/clipboard"
+        >clipboard</a
+      >
+      is not supported by your browser';
+    </section>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>matchMedia</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css"
+    />
+    <style>
+      body {
+        font-family: sans-serif;
+        min-width: 320px;
+      }
+
+      .container {
+        padding: 1.5em;
+        border: 10px dashed black;
+        text-align: center;
+        max-height: 200px;
+      }
+
+      p {
+        font-size: 1.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>matchMedia test</h1>
+
+      <p class="mq-value"></p>
+    </div>
+
+    <br /><br /><br />
+    <p>
+      Media queries with javascript
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia"
+        >mediaMatch</a
+      >
+    </p>
+    <script src="./script.js"></script>
+  </body>
+</html>

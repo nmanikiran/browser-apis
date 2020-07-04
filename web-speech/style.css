@@ -1,0 +1,49 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: inherit;
+  overflow: hidden;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+h1,
+p {
+  text-align: center;
+  padding: 1rem;
+}
+.main {
+  width: 60%;
+  margin: 0 auto;
+  min-width: 320px;
+}
+.footer {
+  height: 100px;
+  width: 100vw;
+  overflow: auto;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+ul {
+  margin: 0;
+}
+.hints {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+span {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
+  margin: 0.1rem;
+  padding: 0.1rem;
+  font-size: 1.1rem;
+}

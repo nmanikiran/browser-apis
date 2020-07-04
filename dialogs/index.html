@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css"
+    />
+    <title>Dialogs</title>
+    <style>
+      .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      dialog {
+        top: 50%;
+        left: 50%;
+        padding: 1rem;
+        transform: translate(-50%, -50%);
+      }
+      button {
+        margin: 0.5rem;
+      }
+      dialog menu {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="main">
+      <p>
+        The HTML
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog"
+          >dialog</a
+        >
+        element represents a dialog box or other interactive component, such as
+        a dismissable alert, inspector, or subwindow.
+      </p>
+      <dialog id="favDialog">
+        <form method="dialog">
+          <p>
+            <label
+              >Favorite animal:
+              <select>
+                <option></option>
+                <option>Brine shrimp</option>
+                <option>Red panda</option>
+                <option>Spider monkey</option>
+              </select>
+            </label>
+          </p>
+          <menu>
+            <button value="cancel">Cancel</button>
+            <button id="confirmBtn" value="default">Confirm</button>
+          </menu>
+        </form>
+      </dialog>
+
+      <button id="updateDetails">Update details</button>
+
+      <output aria-live="polite"></output>
+    </section>
+    <script src="./script.js"></script>
+  </body>
+</html>
