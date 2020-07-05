@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Battery Status API Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css"
+    />
+  </head>
+  <body>
+    <h2>Your Battery</h2>
+    <div id="battery" style="border: 1px solid #000; width: 200px;">
+      <div
+        id="level"
+        style="
+          min-height: 30px;
+          font-size: 40px;
+          text-align: center;
+          color: rgb(0, 0, 0);
+          background: rgb(221, 221, 221);
+          width: 100%;
+        "
+      >
+        (battery level unknown)
+      </div>
+    </div>
+    <br />
+    <p>
+      <strong>Battery life:</strong>
+      <span id="dischargingTime"> <em>(discharging time unknown)</em></span>
+    </p>
+    <p>
+      <strong>Charging Status:</strong>
+      <span id="chargingStatus">NOT Charging</span>
+    </p>
+    <script src="./script.js"></script>
+  </body>
+</html>

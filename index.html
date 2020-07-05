@@ -10,50 +10,79 @@
     <title>Browser APIs</title>
   </head>
   <body>
-    <div class="w-5/6 m-auto">
-      <div class="">
-        <p class="m-8">
-          JavaScript APIs for
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API"
-            >WebExtensions</a
-          >
-          can be used inside the extension's background scripts and in any other
-          documents bundled with the extension, including browser action or page
-          action popups, sidebars, options pages, or new tab pages. A few of
-          these APIs can also be accessed by an extension's content scripts (see
-          the list in the content script guide).
-        </p>
-      </div>
+    <section class="p-2 m-auto sm:w-auto md:w-full lg:w-5/6 xl:w-3/4">
+      <p class="m-8">
+        JavaScript APIs for
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API"
+          >WebExtensions</a
+        >
+        can be used inside the extension's background scripts and in any other
+        documents bundled with the extension, including browser action or page
+        action popups, sidebars, options pages, or new tab pages. A few of these
+        APIs can also be accessed by an extension's content scripts (see the
+        list in the content script guide).
+      </p>
       <div class="bg-white shadow overflow-hidden p-2 m-2">
-        <div class="grid grid-cols-3 gap-4">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
           <div class="text-gray-700 text-center bg-gray-400">
-            <a class="block w-full p-2" href="./clipboard-api/"
-              >Clipboard Api</a
-            >
+            <a class="block w-full p-2" href="./geolocation-api/">
+              Geolocation Api
+            </a>
           </div>
           <div class="text-gray-700 text-center bg-gray-400">
-            <a class="block w-full p-2" href="./dialogs/">Dialog</a>
+            <a class="block w-full p-2" href="./clipboard-api/">
+              Clipboard Api
+            </a>
           </div>
           <div class="text-gray-700 text-center bg-gray-400">
             <a class="block w-full p-2" href="./fullscreen-api/">Fullscreen</a>
           </div>
           <div class="text-gray-700 text-center bg-gray-400">
+            <a class="block w-full p-2" href="./network-check/">
+              Network Check
+            </a>
+          </div>
+          <div class="text-gray-700 text-center bg-gray-400">
+            <a class="block w-full p-2" href="./notification/">Notification</a>
+          </div>
+          <div class="text-gray-700 text-center bg-gray-400">
             <a class="block w-full p-2" href="./matchmedia/">mediaMatch</a>
           </div>
           <div class="text-gray-700 text-center bg-gray-400">
-            <a class="block w-full p-2" href="./text-to-speech/"
-              >text-to-speech</a
-            >
+            <a class="block w-full p-2" href="./text-to-speech/">
+              Text-to-Speech
+            </a>
           </div>
           <div class="text-gray-700 text-center bg-gray-400">
-            <a class="block w-full p-2" href="./web-share/">web-share</a>
+            <a class="block w-full p-2" href="./web-share/">Web-share</a>
           </div>
           <div class="text-gray-700 text-center bg-gray-400">
-            <a class="block w-full p-2" href="./web-speech/">web-speech</a>
+            <a class="block w-full p-2" href="./web-speech/">Web-speech</a>
+          </div>
+          <div class="text-gray-700 text-center bg-gray-400">
+            <a class="block w-full p-2" href="./dialogs/">Dialog</a>
+          </div>
+          <div class="text-gray-700 text-center bg-gray-400">
+            <a class="block w-full p-2" href="./resize-observer/">
+              Resize Observer
+            </a>
+          </div>
+          <div class="text-gray-700 text-center bg-gray-400">
+            <a class="block w-full p-2" href="./battery/">Battery Status</a>
+          </div>
+          <div class="text-gray-700 text-center bg-gray-400">
+            <a class="block w-full p-2" href="./vibration/">Vibration</a>
+          </div>
+          <div class="text-gray-700 text-center bg-gray-400">
+            <a class="block w-full p-2" href="./picture-in-picture/">
+              Picture-in-Picture
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </body>
 </html>

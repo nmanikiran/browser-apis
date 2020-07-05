@@ -5,19 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
     url: 'https://github.com/nmanikiran'
   };
 
-  const $btn = document.querySelector('button');
+  const $btn = document.querySelector('#share');
   const $resultPara = document.querySelector('.result');
-
+  $resultPara.hidden = true;
   $btn.addEventListener('click', () => {
     navigator
       .share(shareData)
-      .then(() => (resultPara.textContent = 'MDN shared successfully'))
+      .then(() => (resultPara.textContent = 'Shared successfully'))
       .catch((e) => (resultPara.textContent = 'Error: ' + e));
   });
   if (!navigator.share) {
     $btn.style.display = 'none';
-    $resultPara.innerHTML =
-      '<a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share" >Web share</a> is not supported by your browser';
+    $resultPara.hidden = false;
     $resultPara.style.color = 'red';
   }
 });

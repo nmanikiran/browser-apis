@@ -1,7 +1,15 @@
 {
   "name": "browserapis",
   "version": "1.0.0",
-  "description": "",
+  "description": "Web JavaScript APIs",
+  "keywords": [
+    "web-share",
+    "fullscreen",
+    "dailogs",
+    "clipboard",
+    "text-to-speech",
+    "match-media"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notifications</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <p>
+        The Notification interface of the
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/notification">
+          Notifications API </a
+        >is used to configure and display desktop notifications to the user.
+        These notifications' appearance and specific functionality vary across
+        platforms but generally they provide a way to asynchronously provide
+        information to the user.
+      </p>
+
+      <blockquote>
+        This browser does not
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API#Browser_compatibility"
+          >support</a
+        >
+        desktop notification
+      </blockquote>
+      <button id="notify">Notify me!</button>
+      <h2>Title & Body</h2>
+      <p>Basic example of a notification with a basic title and body.</p>
+      <button id="title">Title & Body</button>
+      <h2>Icon</h2>
+      <p>
+        The icon on a notification is the image to the left of the title and
+        body text.
+      </p>
+      <button id="icon">Icon</button>
+      <h2>Action Buttons</h2>
+      <p>
+        Actions allow you to add buttons to a notification so multiple actions
+        can be performed by your user.
+      </p>
+      <button id="actions" disabled>Actions</button>
+    </div>
+    <h2>Require Interaction</h2>
+    <p>
+      On desktop, a notification is only displayed for a short period of time.
+      On Android, notifications are shown until the user interacts with it.
+    </p>
+    <button id="require-interaction">Require Interaction</button>
+    <h2>Notification Badge</h2>
+    <p>
+      Notification badges are only being used on mobile, at least at the time of
+      writing. It’s used to replace the browser icon that is shown by default.
+    </p>
+    <button id="badge">Badge</button>
+    <script src="./script.js"></script>
+  </body>
+</html>

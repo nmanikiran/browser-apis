@@ -1,0 +1,32 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Network Checker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css"
+    />
+    <style>
+      .network-status {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <p>
+        Navigator.onLine Returns the online status of the browser.
+        <code>true</code> meaning <code>online</code> and
+        <code>false</code> meaning <code>offline</code>. The property sends
+        updates whenever the browser's ability to connect to the network
+        changes.
+      </p>
+      <blockquote>
+        <em> turn on/off your data / wifi to check this</em>
+      </blockquote>
+      <p class="network-status"><button class="status">Hello</button></p>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
