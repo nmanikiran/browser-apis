@@ -15,7 +15,6 @@ intersection-observer
 fetch
 shape-detection
 payment-request
-drag-drop
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
