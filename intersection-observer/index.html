@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Intersection Observer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css"
+    />
+    <style>
+      img {
+        object-fit: contain;
+        width: 100%;
+      }
+      video {
+        width: 100%;
+        margin: 5rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    The
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API"
+      >Intersection Observer API
+    </a>
+    provides a way to asynchronously observe changes in the intersection of a
+    target element with an ancestor element or with a top-level document's
+    viewport.
+    <ul>
+      <li>Lazy-loading of images or other content as a page is scrolled.</li>
+      <li>
+        Implementing "infinite scrolling" web sites, where more and more content
+        is loaded and rendered as you scroll, so that the user doesn't have to
+        flip through pages.
+      </li>
+      <li>
+        Reporting of visibility of advertisements in order to calculate ad
+        revenues.
+      </li>
+      <li>
+        Deciding whether or not to perform tasks or animation processes based on
+        whether or not the user will see the result.
+      </li>
+    </ul>
+    <blockquote>
+      Video will be played only when entire video is in <code>viewport</code>
+    </blockquote>
+    <video
+      class="iObserve"
+      loop
+      src="https://www.w3schools.com/html/movie.mp4"
+    ></video>
+    <video
+      class="iObserve"
+      loop
+      src=" https://www.w3schools.com/html/mov_bbb.mp4"
+    ></video>
+    <video
+      class="iObserve"
+      loop
+      src=" https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+    ></video>
+    <video
+      class="iObserve"
+      loop
+      src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
+    ></video>
+
+    <video
+      class="iObserve"
+      loop
+      src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4"
+    ></video>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

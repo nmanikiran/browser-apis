@@ -12,9 +12,9 @@ If you found this project useful, then please consider giving it a ⭐️ on Git
 
 ## TODO
 
-- [ ] Drag Drop
+- [x] Drag Drop
 - [ ] Fetch & Abort
-- [ ] Intersection Observer
+- [x] Intersection Observer
 - [x] Page Visibility
 - [ ] Payment Request
 
