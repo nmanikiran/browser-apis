@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bc = new BroadcastChannel('test_channel');
   } catch (error) {
     $support.hidden = false;
+    return;
   }
 
   const postMessage = () => {

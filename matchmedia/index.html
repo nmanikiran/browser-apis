@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>matchMedia</title>
     <link
       rel="stylesheet"
@@ -26,13 +28,6 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>matchMedia test</h1>
-
-      <p class="mq-value"></p>
-    </div>
-
-    <br /><br /><br />
     <p>
       Media queries with javascript
       <a
@@ -40,6 +35,24 @@
         >mediaMatch</a
       >
     </p>
+    <blockquote>
+      Resize the browser to see the media
+    </blockquote>
+    <div class="container">
+      <h1>matchMedia test</h1>
+
+      <p class="mq-value"></p>
+    </div>
+
+    <br /><br /><br />
+
+    <blockquote>
+      prefers-color-scheme will be checked on load, if you want to test by
+      switching mode then you need reload the browser or wrap this inside
+      page-visibility
+      <code> visibilitychange</code> event
+    </blockquote>
+    <p><code>prefers-color-scheme:</code> <span id="theme"></span> mode</p>
     <script src="./script.js"></script>
   </body>
 </html>
