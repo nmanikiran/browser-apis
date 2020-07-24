@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Broadcasr API</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css"
+    />
+  </head>
+  <body>
+    <p>
+      The
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API"
+      >
+        Broadcast Channel API</a
+      >
+      allows basic communication between browsing contexts (that is, windows,
+      tabs, frames, or iframes) and workers on the same origin.
+    </p>
+    <blockquote>To Test this, open the site in new tab as well</blockquote>
+    <form action="#">
+      <input type="text" id="title" required placeholder="Enter title" />
+      <button id="setTitle" type="submit">Change Title</button>
+    </form>
+    <blockquote id="support">
+      Your browser not support, check
+      <a href="https://caniuse.com/#feat=broadcastchannel">
+        Browser Compatability</a
+      >
+    </blockquote>
+    <script src="./script.js"></script>
+  </body>
+</html>
