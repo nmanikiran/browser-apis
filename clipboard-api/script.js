@@ -13,37 +13,49 @@ document.addEventListener('DOMContentLoaded', () => {
     supportEl.style.display = 'none';
   }
 
-  const readFromClipboard = () => {
-    navigator.clipboard
-      .readText()
-      .then((text) => {
-        resultsEl.innerText = text;
-      })
-      .catch((err) => {
-        console.log('Something went wrong', err);
-      });
+  const readFromClipboard = async (e) => {
+    try {
+      const text = await navigator.clipboard.readText();
+      resultsEl.innerText = text;
+      if (e.type === 'paste') {
+        console.log('Pasted text: ', text);
+      }
+    } catch (error) {
+      console.error(error.name, error.message);
+    }
   };
 
-  const writeToClipboard = () => {
+  const writeToClipboard = async () => {
     const inputValue = inputEl.innerText.trim();
     if (!inputValue) return;
-    navigator.clipboard
-      .writeText(inputValue)
-      .then(() => {
-        inputEl.value = '';
-        if (copyBtn.innerText !== 'Copied!') {
-          const originalText = copyBtn.innerText;
-          copyBtn.innerText = 'Copied!';
-          setTimeout(() => {
-            copyBtn.innerText = originalText;
-          }, 1500);
-        }
-      })
-      .catch((err) => {
-        console.log('Something went wrong', err);
-      });
+    try {
+      await navigator.clipboard.writeText(inputValue);
+      if (copyBtn.innerText !== 'Copied!') {
+        const originalText = copyBtn.innerText;
+        copyBtn.innerText = 'Copied!';
+        setTimeout(() => {
+          copyBtn.innerText = originalText;
+        }, 1500);
+      }
+    } catch (error) {
+      console.error(error.name, error.message);
+    }
   };
-  pasteBtn.addEventListener('click', readFromClipboard);
 
+  const handleWriteToClipboard = async (e) => {
+    e.preventDefault();
+    try {
+      const text = e.target.innerText;
+      await navigator.clipboard.writeText(text);
+      console.log('Copied text: ', text);
+    } catch (err) {
+      console.error(err.name, err.message);
+    }
+  };
+
+  pasteBtn.addEventListener('click', readFromClipboard);
   copyBtn.addEventListener('click', writeToClipboard);
+
+  document.addEventListener('copy', handleWriteToClipboard);
+  document.addEventListener('paste', readFromClipboard);
 });
