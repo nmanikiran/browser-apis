@@ -1,0 +1,73 @@
+<html lang="en">
+  <head>
+    <title>Touch Events tutorial</title>
+    <meta name="viewport" content="width=device-width" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css"
+  />
+    <style>
+      body {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      .spacer {
+        flex: 1;
+      }
+      div {
+        margin: 0em;
+        padding: 2em;
+      }
+
+      #target1,
+      #target2,
+      #target3,
+      #target4 {
+        background: white;
+        color:black;
+        border: 1px solid black;
+      }
+      footer {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Multi-touch interaction</h1>
+    <p>
+      This app demonstrates using the Touch Events touch event types
+      (touchstart, touchmove, touchcancel and touchend) for the following
+      interaction: 
+      <ol>
+        <li>Single touch</li>
+        <li>Two (simultaneous) touches</li>
+        <li>More than  two simultaneous touches</li>
+        <li>1-finger swipe</li>
+        <li>2-finger move/pinch/swipe</li>
+      </ol>
+    </p>
+    <p>
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Touch_events/Multi-touch_interaction"
+        target="_blank"
+        >Multi-touch interaction</a
+      >
+    </p>
+    <!-- Create some boxes to test various gestures. -->
+    <div id="target1">Tap, Multi-touch hold me 1</div>
+    <div id="target2">Tap, Multi-touch Hold me 2</div>
+    <div id="target3">Tap, Multi-touch Hold me 3</div>
+    <div id="target4">Tap, Multi-touch Hold me 4</div>
+    <div class="spacer"></div>
+    <footer>
+      This is inspired from
+      <a href=" https://codepen.io/Suniaster/pen/qBmEzOW" target="_blank"
+        >Multi-touch interaction
+      </a>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

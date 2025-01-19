@@ -1,11 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const $charging = document.querySelector('#chargingStatus');
-  const $dischargingTime = document.querySelector('#dischargingTime');
-  const $level = document.querySelector('#level');
+document.addEventListener("DOMContentLoaded", async () => {
+  const $charging = document.querySelector("#chargingStatus");
+  const $dischargingTime = document.querySelector("#dischargingTime");
+  const $level = document.querySelector("#level");
+  let battery = {};
 
   function updateBatteryStatus(battery) {
-    $charging.textContent = battery.charging ? 'Charging' : 'NOT Charging';
-    $charging.style.color = battery.charging ? 'green' : 'red';
+    $charging.textContent = battery.charging ? "Charging" : "NOT Charging";
+    $charging.style.color = battery.charging ? "green" : "red";
     $level.textContent = `${battery.level * 100}%`;
     if (battery.dischargingTime !== Infinity) {
       $dischargingTime.textContent = `${parseFloat(
@@ -14,21 +15,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  navigator.getBattery().then(function (battery) {
+  try {
+    battery = await navigator.getBattery();
     // Update the battery status initially when the promise resolves ...
     updateBatteryStatus(battery);
 
     // .. and for any subsequent updates.
-    battery.onchargingchange = function () {
-      updateBatteryStatus(battery);
-    };
+    battery.addEventListener("chargingchange", (e) => {
+      updateBatteryStatus(e.target);
+    });
 
-    battery.onlevelchange = function () {
-      updateBatteryStatus(battery);
-    };
+    battery.addEventListener("levelchange", (e) => {
+      updateBatteryStatus(e.target);
+    });
 
-    battery.ondischargingtimechange = function () {
-      updateBatteryStatus(battery);
-    };
-  });
+    battery.addEventListener("chargingtimechange", (e) => {
+      updateBatteryStatus(e.target);
+    });
+
+    battery.addEventListener("dischargingtimechange", (e) => {
+      updateBatteryStatus(e.target);
+    });
+  } catch (error) {
+    console.log(error);
+  }
 });

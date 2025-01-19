@@ -14,6 +14,7 @@
       The
       <a
         href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API"
+        target="_blank"
       >
         Geolocation API</a
       >
@@ -22,8 +23,19 @@
       location information.
     </p>
     <button id="find-me">Show my location</button><br />
-    <p id="status"></p>
-    <a id="map-link" target="_blank"></a>
+    <div id="location">
+      <p id="status"></p>
+      <a id="map-link" target="_blank"></a>
+    </div>
+    <br />
+    <div id="liveLocation" hidden>
+      <hr />
+      <br />
+      <h4>Live location information</h4>
+      <button id="startLiveLocation">Start Live Location</button>
+      <p id="locationData"></p>
+      <button id="stopLiveLocation" hidden>Stop Live Location</button>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>

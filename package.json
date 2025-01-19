@@ -8,7 +8,18 @@
     "dailogs",
     "clipboard",
     "text-to-speech",
-    "match-media"
+    "match-media",
+    "geolocation",
+    "camera",
+    "drag-and-drop",
+    "storage",
+    "wake-lock",
+    "intersection-observer",
+    "battery",
+    "vibration",
+    "web-speech",
+    "picture-in-picture",
+    "broadcast-channel"
   ],
   "main": "index.js",
   "scripts": {
