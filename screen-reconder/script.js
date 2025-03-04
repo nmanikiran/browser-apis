@@ -1,58 +1,81 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const $btn = document.querySelector(".record-btn");
-  const $play = document.querySelector(".play-btn");
-  const $download = document.querySelector(".download-btn");
-  const $video = document.querySelector("video");
-
+(function () {
+  let stream, audio;
   let mediaRecorder;
   let videoUrl;
   let chunks = [];
+  let $startBtn, $play, $download, $video, $stop;
+  const mediaType = "video/mp4";
 
   const stopRecording = () => {
     let blob = new Blob(chunks, {
-      type: chunks[0].type,
+      type: mediaType,
     });
     videoUrl = URL.createObjectURL(blob);
+    stream.getTracks().forEach((track) => track.stop());
+    audio.getTracks().forEach((track) => track.stop());
+    mediaRecorder.stop();
+    $stop.disabled = true;
     $play.removeAttribute("disabled");
     $download.removeAttribute("disabled");
   };
-
-  $play.addEventListener("click", function () {
+  const playRecording = () => {
     if (videoUrl) {
       $video.hidden = false;
       $video.src = videoUrl;
-      $video.play();
+      $video.onloadedmetadata = function (e) {
+        $video.play();
+      };
     }
-  });
-
-  $download.addEventListener("click", function () {
+  };
+  const downloadRecording = () => {
     if (videoUrl) {
+      const name = window.prompt("Enter name of the video");
       let a = document.createElement("a");
       a.href = videoUrl;
-      a.download = "video.webm";
+      a.download = `${name}.mp4`;
       a.click();
     }
-  });
-
-  $btn.addEventListener("click", async function () {
-    let stream = await navigator.mediaDevices.getDisplayMedia({
+  };
+  const startRecording = async () => {
+    stream = await navigator.mediaDevices.getDisplayMedia({
       video: true,
     });
+    audio = await navigator.mediaDevices.getUserMedia({
+      audio: {
+        echoCancellation: true,
+        noiseSuppression: true,
+        sampleRate: 44100,
+      },
+    });
     //needed for better browser support
-    const mime = MediaRecorder.isTypeSupported("video/webm; codecs=vp9")
-      ? "video/webm; codecs=vp9"
-      : "video/webm";
-    mediaRecorder = new MediaRecorder(stream, {
-      mimeType: mime,
-    });
+    const mediaSteam = new MediaStream([
+      ...stream.getTracks(),
+      ...audio.getTracks(),
+    ]);
+    mediaRecorder = new MediaRecorder(mediaSteam);
 
-    mediaRecorder.addEventListener("dataavailable", function (e) {
+    mediaRecorder.ondataavailable = function (e) {
       chunks.push(e.data);
-    });
+    };
 
     mediaRecorder.addEventListener("stop", stopRecording);
+    mediaRecorder.onstop = stopRecording;
 
     //we have to start the recorder manually
     mediaRecorder.start();
+    $stop.removeAttribute("disabled");
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    $startBtn = document.querySelector(".record-btn");
+    $play = document.querySelector(".play-btn");
+    $download = document.querySelector(".download-btn");
+    $video = document.querySelector("video");
+    $stop = document.querySelector(".stop-btn");
+
+    $startBtn.addEventListener("click", startRecording);
+    $stop.addEventListener("click", stopRecording);
+
+    $play.addEventListener("click", playRecording);
+    $download.addEventListener("click", downloadRecording);
   });
-});
+})();
